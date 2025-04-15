@@ -48,6 +48,7 @@ node_modules/
 # Ignore user-specific files
 /app/etc/config.php
 /app/etc/env.php
+/env.php
 
 # Ignore code quality tools
 /.php_cs.cache
