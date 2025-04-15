@@ -1,0 +1,17 @@
+{
+  "name": "sdn/webp-support",
+  "description": "Add support for webp MIME type in Magento 2",
+  "require": {
+    "php": ">=7.3"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "SDN\\WebpSupport\\": ""
+    }
+  }
+}

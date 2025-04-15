@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_load_before">
+        <observer name="sdn_hide_brands_from_g" instance="SDN\HideBrandsFromG\Observer\Noindexfollow" />
+    </event>
+<!--    <event name="catalog_category_load_after">-->
+    <event name="layout_generate_blocks_after">
+        <observer name="custom_category_product_observer" instance="SDN\HideBrandsFromG\Observer\CategoryProductObserver" />
+    </event>
+</config>

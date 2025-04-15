@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sdn_keyt_keyt" resource="default" engine="innodb" comment="sdn_keyt_keyt Table">
+        <column xsi:type="int" name="keyt_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity Id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="keyt_id"/>
+        </constraint>
+        <column name="product_id" nullable="true" xsi:type="int" comment="product_id" identity="false"/>
+        <column name="sku" nullable="true" xsi:type="varchar" comment="sku" length="255"/>
+        <column name="name" nullable="true" xsi:type="text" comment="name"/>
+        <column name="qty" nullable="true" xsi:type="int" comment="qty" identity="false"/>
+        <column name="price" nullable="true" xsi:type="float" comment="price"/>
+        <column name="image" nullable="true" xsi:type="varchar" comment="image"/>
+    </table>
+</schema>

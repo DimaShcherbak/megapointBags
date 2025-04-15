@@ -1,0 +1,65 @@
+// /**
+//  * DISCLAIMER
+//  *
+//  * Do not edit or add to this file if you wish to upgrade Smile ElasticSuite to newer
+//  * versions in the future.
+//  *
+//  *
+//  * @category  Smile
+//  * @package   Smile\ElasticsuiteCore
+//  * @author    Romain Ruaud <romain.ruaud@smile.fr>
+//  * @copyright 2020 Smile
+//  * @license   Open Software License ("OSL") v. 3.0
+//  */
+
+
+& when (@media-common = true) {
+    .search-autocomplete {
+        position: absolute;
+        z-index: 3;
+        overflow: hidden;
+        margin-top: -15px;
+        &:extend(.abs-add-box-sizing all);
+        dl {
+            .lib-list-reset-styles();
+            dt {
+                &:not(:empty) {
+
+                    border-top: 0;
+                    border-bottom: 0;
+                }
+
+                cursor: default;
+                margin: 0;
+
+                position: relative;
+                text-align: left;
+                white-space: normal;
+                &:first-child {
+                    border-top: none;
+                }
+
+            }
+            dd {
+                &:not(:empty) {
+                    border-top: 0;
+                }
+                cursor: pointer;
+                margin: 0;
+                position: relative;
+                text-align: left;
+                white-space: normal;
+                &:first-child {
+                    border-top: none;
+                }
+                .amount {
+                    position: absolute;
+                    right: 7px;
+                }
+                .clear {
+                    clear:both;
+                }
+            }
+        }
+    }
+}

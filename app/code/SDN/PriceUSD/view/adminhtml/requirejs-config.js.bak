@@ -1,0 +1,10 @@
+var config = {
+    paths: {
+        'js-file-alias': 'SDN_PriceUSD/js/custom_product_edit.js'
+    },
+    shim: {
+        'js-file-alias2': {
+            deps: ['jquery']
+        }
+    }
+};

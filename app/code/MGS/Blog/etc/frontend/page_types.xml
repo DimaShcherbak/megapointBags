@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page_types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_types.xsd">
+	<type id="blog_index_index" label="Blog Page"/>
+	<type id="blog_category_view" label="Blog Category Page"/>
+	<type id="blog_tag_view" label="Blog Tag Page"/>
+	<type id="blog_post_view" label="Blog Detail Post Page"/>
+</page_types>

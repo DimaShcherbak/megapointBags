@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+<!--        <add id="SDN::top_level_kate" title="SDN" module="SDN_Kate" sortOrder="9999" resource="SDN_Kate::Product"/>-->
+        <add id="SDN_Kate::sdn_kate_product" title="Катя Влад" module="SDN_Kate" sortOrder="9999"
+             resource="SDN_Kate::sdn_kate_kate" parent="SDN::top_level" action="sdn_kate/product/index"/>
+    </menu>
+</config>

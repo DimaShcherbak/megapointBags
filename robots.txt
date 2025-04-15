@@ -1,0 +1,54 @@
+#User agents
+User-agent:*
+
+#Default Instructions
+Disallow: /lib/
+Disallow: /*.php$
+Disallow: /pkginfo/
+Disallow: /report/
+Disallow: /var/
+Disallow: /media/catalog/product/cache/
+#Disallow: /catalog/
+#Disallow: /customer/
+Disallow: /sendfriend/
+Disallow: /review/
+Disallow: /*SID=
+
+#Restrict User Account & Checkout Pages
+Disallow: /checkout/
+Disallow: /onestepcheckout/
+#Disallow: /customer/
+#Disallow: /customer/account/
+#Disallow: /customer/account/login/
+#Disallow: /account/create/
+
+#Disallow URL Filter Searches
+User-agent: *
+#Disallow: /*?
+Disallow: /*?dir*
+Disallow: /*?dir=desc
+Disallow: /*?dir=asc
+Disallow: /*?limit=all
+Disallow: /*?mode*
+
+#Restrict CMS Directories
+Disallow: /app/
+Disallow: /bin/
+Disallow: /dev/
+Disallow: /lib/
+Disallow: /phpserver/
+Disallow: /pub/
+Disallow: /static/
+Allow: /static/frontend/SDN/claue_bags/
+
+#Disallow Duplicate Content
+Disallow: /tag/
+Disallow: /review/
+
+#Job pages
+Disallow: /*/Toutes
+Disallow: /*/Congratulations
+
+#Sitemap XML
+Sitemap: https://megapoint.com.ua/media/sitemap/sitemap_ru.xml
+Sitemap: https://megapoint.com.ua/media/sitemap/sitemap_ua.xml

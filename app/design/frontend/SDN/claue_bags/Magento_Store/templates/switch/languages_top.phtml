@@ -1,0 +1,23 @@
+<?php
+/** @var \Magento\Store\Block\Switcher $block */
+?>
+<?php if (count($block->getStores()) > 1) : ?>
+    <?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : '' ?>
+    <div class="switcher language switcher-language" data-ui-id="language-switcher" id="switcher-language-top<?= $block->escapeHtmlAttr($id) ?>">
+        <strong class="label switcher-label"><span><?= $block->escapeHtml(__('Language')) ?></span></strong>
+        <div class="actions switcher-options">
+            <?php $storeCount = count($block->getStores()); ?>
+            <?php $i = 0; ?>
+            <?php foreach ($block->getStores() as $_lang) : ?>
+                    <?php $langCode = strtoupper(substr($_lang->getCode(), 0, 2)); ?>
+                    <a href="<?= $block->escapeUrl($block->getViewModel()->getTargetStoreRedirectUrl($_lang)) ?>" class="switcher-option">
+                        <?= $block->escapeHtml(__($langCode)) ?>
+                        <?php if ($i < ($storeCount - 1)) : ?>
+                             |
+                        <?php endif; ?>
+                    </a>
+                    <?php $i++; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="SDN\Keyt\Api\KeytRepositoryInterface" type="SDN\Keyt\Model\KeytRepository"/>
+	<preference for="SDN\Keyt\Api\Data\KeytInterface" type="SDN\Keyt\Model\Keyt"/>
+	<preference for="SDN\Keyt\Api\Data\KeytSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="SDN\Keyt\Model\ResourceModel\Keyt\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">sdn_keyt_keyt</argument>
+			<argument name="resourceModel" xsi:type="string">SDN\Keyt\Model\ResourceModel\Keyt\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="sdn_keyt_keyt_listing_data_source" xsi:type="string">SDN\Keyt\Model\ResourceModel\Keyt\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

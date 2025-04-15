@@ -1,0 +1,57 @@
+/bin/
+/dev/
+/lib/
+/phpserver/
+/setup/
+/.editorconfig
+/.htaccess
+/.htaccess.sample
+/.php-cs-fixer.dist.php
+/.user.ini
+/auth.json.sample
+/CHANGELOG.md
+/composer.lock
+/COPYING.txt
+/grunt-config.json.sample
+/Gruntfile.js.sample
+/LICENSE.txt
+/LICENSE_AFL.txt
+/nginx.conf
+/nginx.conf.sample
+/package.json.sample
+/SECURITY.md
+/grunt-config.json
+/package.json
+/Gruntfile.js
+# Magento sensitive/config files
+/auth.json
+
+# Magento generated error templates
+/pub/errors/
+
+# If you don't store custom code in app/lib
+/app/lib/
+
+# node/npm
+node_modules/
+
+# Ignore Magento 2 generated files
+/generated/
+/pub/static/
+/var/
+/pub/media/
+/node_modules/
+
+# Ignore Magento 2 composer dependencies
+/vendor/
+
+# Ignore user-specific files
+/app/etc/config.php
+/app/etc/env.php
+
+# Ignore code quality tools
+/.php_cs.cache
+/.php_cs
+/phpmd.xml
+/.phpunit.result.cache
+/.idea/

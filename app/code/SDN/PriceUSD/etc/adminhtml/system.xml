@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="sdn" translate="label" sortOrder="999">
+            <label>S_D_N</label>
+        </tab>
+        <section id="price" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+            <label>USD rate</label>
+            <tab>sdn</tab>
+            <resource>SDN_PriceUSD::config_sdn_priceusd</resource>
+            <group id="options" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <label>Settings</label>
+                <field id="sdn_rate_enable" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
+                       showInStore="1" sortOrder="10">
+                    <label>Enable rate USD</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="price_usd" type="text" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label">
+                    <label>USD rate</label>
+                    <comment>Введите курс доллара</comment>
+                </field>
+                <field id="price_margin" type="text" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label">
+                    <label>Margin</label>
+                    <comment>наишите заработок в %, например '35'</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

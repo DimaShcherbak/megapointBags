@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+<!--        <add id="Magento_Backend::keyt" title="SDN" module="SDN_Keyt" sortOrder="9999"-->
+<!--             resource="Magento_Backend::keyt"/>-->
+        <add id="SDN_Keyt::sdn_keyt_keyt" title="Катя Влад" module="SDN_Keyt" sortOrder="9999"
+             resource="SDN_Keyt::sdn_keyt_keyt" parent="SDN::top_level" action="sdn_keyt/keyt/index"/>
+    </menu>
+</config>

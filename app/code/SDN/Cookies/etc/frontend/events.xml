@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework/Event/etc/events.xsd">
+    <event name="customer_login">
+        <observer name="sdn_set_cookie_login" instance="SDN\Cookies\Observer\CustomerLogin"/>
+    </event>
+    <event name="customer_logout">
+        <observer name="sdn_remove_cookie_logout" instance="SDN\Cookies\Observer\CustomerLogout"/>
+    </event>
+</config>

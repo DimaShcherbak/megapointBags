@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block \Magento\ProductAlert\Block\Email\Stock */
+?>
+<?php if ($_products = $block->getProducts()) : ?>
+    <p><?= $block->escapeHtml(__('Ми хотіли, щоб ви знали, що ці продукти вже доступні:')) ?></p>
+    <table>
+        <?php foreach ($_products as $_product) : ?>
+            <tr>
+                <td class="col photo">
+                    <!--                <a href="-->
+                    <?php //= $block->escapeUrl($_product->getProductUrl()) ?><!--" title="-->
+                    <?php //= $block->escapeHtml($_product->getName()) ?><!--" class="product photo">-->
+                    <!--                    --><?php //= $block->getImage($_product, 'product_thumbnail_image', ['class' => 'photo image'])->toHtml() ?>
+                    <!--                </a>-->
+                    <a href="<?= $block->escapeUrl($_product->getProductUrl()) ?>"
+                       title="<?= $block->escapeHtml($_product->getName()) ?>" class="product photo">
+                        <img src="data:image/jpeg;base64,<?= base64_encode(file_get_contents($block->getImage($_product, 'product_thumbnail_image')->getBaseFile())) ?>"
+                             alt="<?= $block->escapeHtml($_product->getName()) ?>"/>
+                    </a>
+                </td>
+                <td class="col item">
+                    <p>
+                        <strong class="product name">
+                            <a href="<?= $block->escapeUrl($_product->getProductUrl()) ?>"><?= $block->escapeHtml($_product->getName()) ?></a>
+                        </strong>
+                    </p>
+                    <?php if ($shortDescription = $block->getFilteredContent($_product->getShortDescription())) : ?>
+                        <p><small><?= /* @noEscape */
+                                $shortDescription ?></small></p>
+                    <?php endif; ?>
+                    <?=
+                    $block->getProductPriceHtml(
+                        $_product,
+                        \Magento\Catalog\Pricing\Price\FinalPrice::PRICE_CODE,
+                        \Magento\Framework\Pricing\Render::ZONE_EMAIL,
+                        [
+                            'display_label' => __('Price:')
+                        ]
+                    );
+                    ?>
+                    <p>
+                        <small><a href="<?= $block->escapeUrl($block->getProductUnsubscribeUrl($_product->getId())) ?>"><?= $block->escapeHtml(__('Натисніть тут, щоб припинити сповіщення про цей продукт.')) ?></a></small>
+                    </p>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <p>
+        <a href="<?= $block->escapeUrl($block->getUnsubscribeUrl()) ?>"><?= $block->escapeHtml(__('Скасувати підписку на всі сповіщення')) ?></a>
+    </p>
+<?php endif; ?>

@@ -1,0 +1,186 @@
+<?php
+/**
+ * @var SDN\GenShortDescription\Block\Catalog\Product\View $block
+ */
+
+$product = $block->getCurrentProduct();
+$colorenew = $product->getAttributeText('colornew');  //цвет
+$manufacurer = $product->getAttributeText('manufacturer');  //Країна виробник
+$factory = $product->getAttributeText('factory');  //Виробник
+$kolichestvo_otdelenij = $product->getAttributeText('kolichestvo_otdelenij');  //Количество отделений
+$material = $product->getAttributeText('material');  //материал
+$long_belt = $product->getAttributeText('long_belt'); //длинный ремень
+$accessories_for_bags = $product->getAttributeText('accessories_for_bags');//цвет фурнитуры
+$custom_size = $product->getData('custom_size');//габариты
+$back_pocket = $product->getAttributeText('back_pocket');//задний карман
+$lining = $product->getAttributeText('lining');//подкладка
+$on_the_shoulder = $product->getAttributeText('on_the_shoulder');//на плече
+$internal_partition = $product->getAttributeText('internal_partition');//Внутренняя перегородка
+$top_handle = $product->getAttributeText('top_handle');//Ручка чсверху
+$aFourFormat = $product->getAttributeText('a4_format');//Формат А4
+$features_bag = $product->getAttributeText('features_bag');//Особенности
+
+//$volume = $product->getAttributeText('volume');
+//$type= $block->getCategoryName();
+
+//$premiere_of_the_fragrance = $product->getAttributeText('premiere_of_the_fragrance');// дата примьеры
+//$trademark_country = $product->getAttributeText('trademark_country');// страна бренда
+//$made_in = $product->getAttributeText('made_in');// страна производства
+//$gender = $product->getAttributeText('gender');// пол
+//$classification = $product->getAttributeText('classification');// классификация
+//$fragrance_type = $product->getAttributeText('fragrance_type');// тип аромата
+//$top_note = $product->getAttributeText('top_note');// начальная нота 
+//$heart_note = $product->getAttributeText('heart_note');// нота сердца
+//$base_note = $product->getAttributeText('base_note');// конечная нота
+?>
+
+<div class="custom-products-attributes" style="margin-top: 10px;">
+    <ul>
+        <?php if (is_array($manufacurer)): ?>
+            <li><strong><?= __('Країна виробник: ') ?></strong>
+                <?= implode(', ', $manufacurer) ?></li>
+        <?php else: ?>
+            <?php if ($manufacurer): ?>
+                <li><strong><?= __('Країна виробник: ') ?></strong> <?= $manufacurer ?></li>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php if (is_array($factory)): ?>
+            <li><strong><?= __('Виробник: ') ?></strong>
+                <?= implode(', ', $factory) ?></li>
+        <?php else: ?>
+            <?php if ($factory): ?>
+                <li><strong><?= __('Виробник: ') ?></strong> <?= $factory ?></li>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php if (is_array($colorenew)): ?>
+            <li><strong><?= __('Колір: ') ?></strong>
+                <?= implode(', ', $colorenew) ?></li>
+        <?php else: ?>
+            <?php if ($colorenew): ?>
+                <li><strong><?= __('Колір: ') ?></strong> <?= $colorenew ?></li>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php if (!empty($material)): ?>
+            <li><strong><?= __('Материал:') ?></strong>
+                <?php echo __($material); ?></li>
+        <?php endif; ?>
+        <?php if (is_array($kolichestvo_otdelenij)): ?>
+            <li><strong><?= __('Кількість відділів: ') ?></strong>
+                <?= implode(', ', $kolichestvo_otdelenij) ?></li>
+        <?php else: ?>
+            <?php if ($kolichestvo_otdelenij): ?>
+                <li><strong><?= __('Кількість відділів: ') ?></strong> <?= $kolichestvo_otdelenij ?></li>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php if (!empty($on_the_shoulder)): ?>
+            <li><strong><?= __('На плече:') ?></strong>
+                <?php echo __($on_the_shoulder); ?></li>
+        <?php endif; ?>
+        <?php if (!empty($lining)): ?>
+            <li><strong><?= __('Подкладка:') ?></strong> <?php echo __($lining); ?></li>
+        <?php endif; ?>
+        <?php if (!empty($back_pocket)): ?>
+            <li><strong><?= __('Задний карман:') ?></strong> <?php echo __($back_pocket); ?></li>
+        <?php endif; ?>
+        <?php if (!empty($long_belt)): ?>
+            <li><strong><?= __('Дополнительный ремень:') ?></strong> <?php echo __($long_belt); ?></li>
+        <?php endif; ?>
+        <?php if (!empty($accessories_for_bags)): ?>
+            <li><strong><?= __('Цвет фурнитуры:') ?></strong> <?php echo __($accessories_for_bags); ?></li>
+        <?php endif; ?>
+        <?php if (!empty($custom_size)): ?>
+            <li><strong><?= __('Размеры: Ш*В*Г(см):') ?></strong> <?php echo $custom_size . ' (см)'; ?></li>
+        <?php endif; ?>
+
+        <!--        --><?php //if (is_array($custom_size)): ?>
+        <!--            <li><strong>--><?php //= __('Размеры: Ш*В*Г(см):') ?><!--</strong>-->
+        <!--                --><?php //= implode(', ', $custom_size) ?><!--</li>-->
+        <!--        --><?php //else: ?>
+        <!--            --><?php //if ($custom_size): ?>
+        <!--                <li><strong>--><?php //= __('Размеры: Ш*В*Г(см):') ?><!--</strong> -->
+        <?php //echo $custom_size; ?><!--</li>-->
+        <!--            --><?php //endif; ?>
+        <!--        --><?php //endif; ?>
+
+        <?php if (!empty($internal_partition)): ?>
+            <li><strong><?= __('Внутренняя перегородка:') ?></strong> <?php echo __($internal_partition); ?></li>
+        <?php endif; ?>
+                <?php if (!empty($top_handle)): ?>
+            <li><strong><?= __('Ручка сверух:') ?></strong> <?php echo __($top_handle); ?></li>
+        <?php endif; ?>
+
+        <?php if (is_array($aFourFormat)): ?>
+            <li><strong><?= __('Вміщує формат А4: ') ?></strong>
+                <?= implode(', ', $aFourFormat) ?></li>
+        <?php else: ?>
+            <?php if ($aFourFormat): ?>
+                <li><strong><?= __('Вміщує формат А4: ') ?></strong> <?= $aFourFormat ?></li>
+            <?php endif; ?>
+        <?php endif; ?>
+                <?php if (is_array($features_bag)): ?>
+            <li><strong><?= __('ОСОБЛИВОСТІ: ') ?></strong>
+                <?= implode(', ', $features_bag) ?></li>
+        <?php else: ?>
+            <?php if ($features_bag): ?>
+                <li><strong><?= __('ОСОБЛИВОСТІ: ') ?></strong> <?= $features_bag ?></li>
+            <?php endif; ?>
+        <?php endif; ?>
+
+
+        <!--        --><?php //if (is_array($volume)): ?>
+        <!--            <li><strong>--><?php //= __('обьем: ') ?><!--</strong> -->
+        <?php //= implode(', ', $volume) ?><!--</li>-->
+        <!--        --><?php //else: ?>
+        <!--            --><?php //if ($volume): ?>
+        <!--                <li><strong>--><?php //= __('обьем: ') ?><!--</strong> --><?php //= $volume ?><!--</li>-->
+        <!--            --><?php //endif; ?>
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($premiere_of_the_fragrance)): ?>
+        <!--            <li><strong>--><?php //= __('Прем’єра аромату:') ?><!--</strong>-->
+        <!--                --><?php //echo __($premiere_of_the_fragrance); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($trademark_country)): ?>
+        <!--            <li><strong>--><?php //= __('Країна ТМ:') ?><!--</strong>-->
+        <?php //echo __($trademark_country); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($made_in)): ?>
+        <!--            <li><strong>--><?php //= __('Зроблено в:') ?><!--</strong>-->
+        <!--                --><?php //echo __($made_in); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($gender)): ?>
+        <!--            <li><strong>--><?php //= __('Стать:') ?><!--</strong>-->
+        <!--                --><?php //echo __($gender); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($classification)): ?>
+        <!--            <li><strong>--><?php //= __('Класифікація:') ?><!--</strong>-->
+        <!--                --><?php //echo __($classification); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($fragrance_type)): ?>
+        <!--            <li><strong>--><?php //= __('Тип аромату:') ?><!--</strong>-->
+        <!--                --><?php //echo __($fragrance_type); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($top_note)): ?>
+        <!--            <li><strong>--><?php //= __('Початкова нота:') ?><!--</strong>-->
+        <!--                --><?php //echo __($top_note); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($heart_note)): ?>
+        <!--            <li><strong>--><?php //= __('Нота серця:') ?><!--</strong>-->
+        <!--                --><?php //echo __($heart_note); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+        <!---->
+        <!--        --><?php //if (!empty($base_note)): ?>
+        <!--            <li><strong>--><?php //= __('Кінцева нота:') ?><!--</strong>-->
+        <!--                --><?php //echo __($base_note); ?><!--</li>-->
+        <!--        --><?php //endif; ?>
+    </ul>
+</div>
+
+
