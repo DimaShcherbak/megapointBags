@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\File\Validator\NotProtectedExtension">
+        <plugin name="webp_extension_validator" type="SDN\WebpSupport\Model\ImageValidatorPlugin" sortOrder="1"/>
+    </type>
+    <type name="Magento\Framework\Api\ImageContentValidator">
+        <plugin name="webp_mime_type_validator" type="SDN\WebpSupport\Model\ImageValidatorPlugin" sortOrder="1"/>
+    </type>
+    <type name="Magento\MediaStorage\Model\File\Uploader">
+        <arguments>
+            <argument name="allowedMimeTypes" xsi:type="array">
+                <item name="webp" xsi:type="string">image/webp</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

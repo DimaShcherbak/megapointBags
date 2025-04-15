@@ -1,0 +1,18 @@
+<?php
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+?>
+
+<?php $weight = 8888?>
+
+<div class="custom-dynamic-weight">
+    <?php
+    $_product = $block->getProduct();
+    $weight=$_product->getWeight();
+    ?>
+    <h3>вес:</h3> <h3 class="weight-items"><?php echo round($weight).'<span class="AdditionalWeight"></span> гр'?></h3>
+
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sdn_kate_product" resource="default" engine="innodb" comment="sdn_kate_product Table">
+        <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity Id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="product_id"/>
+        </constraint>
+<!--        <column name="img" nullable="true" xsi:type="varchar" comment="image" length="255"/>-->
+        <column name="sku" nullable="true" xsi:type="varchar" comment="sku" length="255"/>
+        <column name="name" nullable="true" xsi:type="varchar" comment="name" length="255"/>
+        <column name="qty" nullable="true" xsi:type="int" comment="qty" identity="false"/>
+        <column name="price" nullable="true" xsi:type="text" comment="price"/>
+    </table>
+</schema>

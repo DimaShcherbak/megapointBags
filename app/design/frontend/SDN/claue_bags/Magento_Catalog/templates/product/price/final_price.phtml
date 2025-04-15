@@ -1,0 +1,18 @@
+<?php
+/**
+ * @var \Magento\Catalog\Pricing\Render\FinalPriceBox $block
+ */
+?>
+<span class="price-container <?= $block->getAdjustmentCssClasses() ?>"
+      <?= $block->getSchema() ? ' itemprop="offers" itemscope itemtype="http://schema.org/Offer"' : '' ?>>
+    <?php if ($block->getDisplayLabel()): ?>
+        <span class="price-label"><?= $block->getDisplayLabel() ?></span>
+    <?php endif; ?>
+    <span class="price-wrapper <?= $block->getPriceId() ?>"
+          <?= $block->getSchema() ? ' itemprop="price"' : '' ?>>
+        <?= $block->getSaleableItem()->getPriceInfo()->getPrice('final_price')->getValue() . ' ' . __('грн') ?>
+    </span>
+    <?php if ($block->hasAdjustmentsHtml()): ?>
+        <?= $block->getAdjustmentsHtml() ?>
+    <?php endif; ?>
+</span>

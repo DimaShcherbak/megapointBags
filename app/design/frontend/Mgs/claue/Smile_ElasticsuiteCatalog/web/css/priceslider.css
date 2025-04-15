@@ -1,0 +1,77 @@
+
+.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+    height: 2px;
+    width: 100%;
+}
+
+.slider-action {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.smile-es-range-slider .actions-primary {
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+}
+.smile-es-range-slider .action {
+    background:#fff;
+	color:#222;
+	padding: 5px 10px;
+    border-radius: 20px;
+    line-height: 20px;
+    display:block;
+    border: 1px solid #111;
+    transition: .3s;
+}
+.smile-es-range-slider .action:hover, .smile-es-range-slider .action:active{
+    background:#111;
+    color: white;
+    border-color: #111;
+}
+.ui-slider-range.ui-widget-header.ui-corner-all{
+    left: 25.5%;
+    width: 50.5%;
+    background:  var(--thim-mgs-color-01);
+    position: absolute;
+    height: 2px;
+}
+
+
+.ui-slider-handle {
+    top: -5px;
+    height: 15px;
+    width: 15px;
+    background: black;
+    display: block;
+}
+
+
+.slider-label>div {
+    position: absolute;
+    margin-top: -25px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 5px;
+    background: #428bca;
+    border-radius: 3px;
+}
+
+.slider-label {
+    position: relative;
+    width: 100%;
+}
+
+.slider-label>div:nth-child(2) {
+    right: 0;
+}
+
+.smile-es-range-slider {
+    margin-top: 40px;
+}
+   

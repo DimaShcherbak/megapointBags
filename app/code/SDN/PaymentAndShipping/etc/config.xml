@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<payment>
+			<cashondelivery>
+				<active>1</active>
+				<model>SDN\PaymentAndShipping\Model\Payment\Cashondelivery</model>
+				<order_status>pending</order_status>
+				<title>cashondelivery</title>
+				<allowspecific>0</allowspecific>
+				<group>offline</group>
+			</cashondelivery>
+		</payment>
+		<carriers>
+			<novaposhta>
+				<model>SDN\PaymentAndShipping\Model\Carrier\Novaposhta</model>
+				<active>0</active>
+				<title>novaposhta</title>
+				<name>novaposhta</name>
+				<price>0.00</price>
+				<specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+				<sallowspecific>0</sallowspecific>
+			</novaposhta>
+		</carriers>
+	</default>
+</config>

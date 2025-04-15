@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+	<router id="admin">
+		<route frontName="sdn_keyt" id="sdn_keyt">
+			<module before="Magento_Backend" name="SDN_Keyt"/>
+		</route>
+	</router>
+</config>

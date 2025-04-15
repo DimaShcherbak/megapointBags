@@ -1,0 +1,21 @@
+.custom-products-attributes ul {
+    list-style-type: none; /* Убираем стандартный маркер списка */
+    padding-left: 0; /* Убираем отступ слева у списка */
+}
+
+.custom-products-attributes li {
+    position: relative; /* Устанавливаем позиционирование для родительского элемента li */
+    padding-left: 15px; /* Устанавливаем отступ слева у каждого элемента li */
+    color: #5D5D5D;
+    font-size: 15px;
+}
+
+.custom-products-attributes li::before {
+    content: ''; /* Пустое содержимое псевдоэлемента */
+    position: absolute; /* Позиционирование псевдоэлемента */
+    top: 8px; /* Положение псевдоэлемента относительно верхнего края li */
+    left: 0; /* Положение псевдоэлемента относительно левого края li */
+    width: 6px; /* Ширина квадрата маркера */
+    height: 6px; /* Высота квадрата маркера */
+    background-color: #5D5D5D; /* Цвет квадрата маркера */
+}

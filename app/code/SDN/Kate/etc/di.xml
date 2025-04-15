@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="SDN\Kate\Api\ProductRepositoryInterface" type="SDN\Kate\Model\ProductRepository"/>
+	<preference for="SDN\Kate\Api\Data\ProductInterface" type="SDN\Kate\Model\Product"/>
+	<preference for="SDN\Kate\Api\Data\ProductSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="SDN\Kate\Model\ResourceModel\Product\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">sdn_kate_product</argument>
+			<argument name="resourceModel" xsi:type="string">SDN\Kate\Model\ResourceModel\Product\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="sdn_kate_product_listing_data_source" xsi:type="string">SDN\Kate\Model\ResourceModel\Product\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

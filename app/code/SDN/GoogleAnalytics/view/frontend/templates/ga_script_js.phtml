@@ -1,0 +1,25 @@
+<?php ///** @var \SDN\GoogleAnalytics\Block\ProductCategoryCheck $block */ ?>
+
+<?php
+$blockName = $block->getLayout()->createBlock('SDN\GoogleAnalytics\Block\ProductCategoryCheck');
+?>
+
+<?php if (!$blockName->isProductInCategory21() && !$blockName->isShopByBrand()): ?>
+    <script>
+        require(['jquery'], function($){
+            $(document).ready(function(){
+                // Google tag (gtag.js)
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-L4WXLMD5SW';
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-L4WXLMD5SW');
+            });
+        });
+    </script>
+<?php endif; ?>
+
