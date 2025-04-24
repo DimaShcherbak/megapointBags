@@ -49,6 +49,7 @@ node_modules/
 /app/etc/config.php
 /app/etc/env.php
 /env.php
+/app/etc/env.php.bak
 
 # Ignore code quality tools
 /.php_cs.cache
